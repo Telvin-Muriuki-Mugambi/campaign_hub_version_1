@@ -21,7 +21,7 @@ export default function Hero_Section(){
                     </div>
 
                     <div className="hero-column2">
-                        <img src="/candidate.jpg" alt="Candidate's Image"/>
+                        <img src="/Candidate_Sample.jpeg" alt="Candidate's Image"/>
                     </div>
 
                 </div>

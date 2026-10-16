@@ -1,0 +1,146 @@
+/* --- Main Footer Container --- */
+.footer-section {
+  background-color: #ffffff; /* Clean white background */
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #e2e8f0;
+}
+
+/* --- Top Content Area --- */
+.footer-content {
+  padding: 4rem 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+/* --- Left Side (Brand & Contact) --- */
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-logo {
+  color: #0b2240; /* Dark Navy Brand Color */
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.footer-contact {
+  display: flex;
+  gap: 2rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0b2240;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: #fbbf24; /* Gold hover effect */
+}
+
+.contact-icon {
+  font-size: 1.3rem !important;
+}
+
+/* --- Right Side (Socials & IEBC) --- */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.5rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: #f4f6f8; /* Soft grey from design */
+  color: #0b2240;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icon-btn:hover {
+  background-color: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+.iebc-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #f4f6f8;
+  color: #0b2240;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: background-color 0.2s ease;
+}
+
+.iebc-btn:hover {
+  background-color: #e2e8f0;
+}
+
+.iebc-icon {
+  font-size: 1.35rem !important;
+  color: #0b2240;
+}
+
+/* --- Bottom Disclaimer Bar --- */
+.footer-bottom {
+  background-color: #f4f6f8; /* Distinct slightly darker grey for bottom bar */
+  padding: 1.5rem 6%;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: #64748b; /* Muted slate gray */
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3rem 1.5rem;
+  }
+  
+  .footer-contact {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-right {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .iebc-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

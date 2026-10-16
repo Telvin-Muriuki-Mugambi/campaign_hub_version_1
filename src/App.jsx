@@ -9,6 +9,8 @@ import Hero_Section from './components/Hero_Section'
 import Navigation from './components/Navigation'
 import Vision from './components/Vision'
 import Engagement_Hub from './components/Engagement_Hub';
+import PowerCampaign from './components/PowerCampaign';
+import Footer from './components/Footer';
 
 
 const visionData = [
@@ -41,6 +43,8 @@ function App() {
       <Hero_Section/>
       <Vision visionData={visionData}/>
       <Engagement_Hub/>
+      <PowerCampaign/>
+      <Footer/>
       
     </>
   )
