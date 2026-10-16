@@ -1,7 +1,7 @@
 import { 
     ChatBubbleOutlineOutlined, 
     PeopleOutlineOutlined, 
-  ArrowForward, 
+    ArrowForward, 
     PersonOutlineOutlined, 
   PhoneOutlined,
   KeyboardArrowDown
