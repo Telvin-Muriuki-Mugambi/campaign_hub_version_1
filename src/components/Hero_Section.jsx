@@ -1,3 +1,4 @@
+import "../styling/Hero_Section.css"
 export default function Hero_Section(){
     return ( 
         <header className="hero-section">

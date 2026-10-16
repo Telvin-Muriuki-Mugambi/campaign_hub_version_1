@@ -2,6 +2,7 @@ import { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
+import "../styling/Navigation.css"
 
 export default function Navigation() {
     const [menuOpen, setMenuOpen] = useState(false);
