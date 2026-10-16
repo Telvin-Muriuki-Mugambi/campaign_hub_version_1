@@ -6,11 +6,12 @@ import {
   ShieldOutlined 
 } from '@mui/icons-material';
 import Hero_Section from './components/Hero_Section'
-import Navigation from './components/Navigation'
+import Header from './components/Header'
 import Vision from './components/Vision'
 import Engagement_Hub from './components/Engagement_Hub';
 import PowerCampaign from './components/PowerCampaign';
 import Footer from './components/Footer';
+
 
 
 const visionData = [
@@ -39,7 +40,7 @@ const visionData = [
 function App() {
   return (
     <>
-      <Navigation />
+      <Header />
       <Hero_Section/>
       <Vision visionData={visionData}/>
       <Engagement_Hub/>
