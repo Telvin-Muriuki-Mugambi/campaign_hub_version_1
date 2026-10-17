@@ -19,22 +19,22 @@ const visionData = [
   {
     icon: <TrendingUpOutlined className="pillar-icon" />,
     title: "Youth Empowerment",
-    description: "Creating localized digital skills training and facilitating access to county youth tenders."
+    description: "Support opportunities that help young people develop skills access opportunities and build a sustainabl livelihood."
   },
   {
     icon: <MenuBookOutlined className="pillar-icon" />,
     title: "Quality Education",
-    description: "A digitized, transparent blueprint for equitable Ward Bursary allocation."
+    description: "Advocate for better education opportunities and support system that give children and young people a chance to succeed."
   },
   {
     icon: <FavoriteBorderOutlined className="pillar-icon" />,
     title: "Better Healthcare",
-    description: "Equipping local dispensaries and ensuring reliable maternal care for all residents."
+    description: "Support accessible quality healthcare services and strong support for the residents who depend on public health facilities."
   },
   {
     icon: <ShieldOutlined className="pillar-icon" />,
     title: "Transparent Leadership",
-    description: "Open-door policy, community-led decision making, and zero tolerance for corruption."
+    description: "Public leadership should be transparent and accountable. Residents deserve to know how decisions are affecting their ward."
   }
 ];
 function NavigationContent() {
