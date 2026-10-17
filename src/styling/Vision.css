@@ -1,0 +1,114 @@
+/* Container */
+.vision-section {
+  padding: 5rem 6%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Header */
+.vision-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.vision-eyebrow {
+  color: #4a5568;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.vision-title {
+  color: #0b2240; /* Dark Navy Brand Color */
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+/* Grid Layout */
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Individual Cards */
+.vision-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 1.25rem;
+  padding: 2.25rem 1.75rem;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.vision-card:hover {
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Icon Badge */
+.icon-wrapper {
+  background-color: #fef3c7; /* Soft yellow fill from your Figma */
+  border-radius: 0.75rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.pillar-icon {
+  color: #1e293b;
+  font-size: 1.4rem !important;
+}
+
+/* Card Content */
+.card-title {
+  color: #0b2240;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.card-description {
+  color: #64748b; /* Soft muted slate for body text */
+  font-size: 0.975rem;
+  line-height: 1.6;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .vision-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2x2 for tablets */
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .vision-section {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .vision-title {
+    font-size: 2rem;
+  }
+
+  .vision-grid {
+    grid-template-columns: 1fr; /* Single column stack for mobile */
+  }
+
+  .vision-card {
+    padding: 1.75rem 1.5rem;
+  }
+}
