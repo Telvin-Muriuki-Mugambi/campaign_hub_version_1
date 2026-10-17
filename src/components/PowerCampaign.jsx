@@ -1,11 +1,16 @@
-import  { useState } from 'react';
 import '../styling/PowerCampaign.css';
 import { SendToMobileOutlined } from '@mui/icons-material';
+import useDonation from '../context/useDonation.js';
 
 export default function PowerCampaign() {
-    const [selectedAmount, setSelectedAmount] = useState('KES 500');
+    const { selectedAmountOption, chooseDonationAmount, setDonationOpen } = useDonation();
 
-    const amounts = ['KES 200', 'KES 500', 'KES 1000', 'Custom Amount'];
+    const amounts = [
+        { label: 'KES 200', option: '200' },
+        { label: 'KES 500', option: '500' },
+        { label: 'KES 1000', option: '1000' },
+        { label: 'Custom Amount', option: 'custom' },
+    ];
 
     return (
         <section className="power-section">
@@ -17,18 +22,20 @@ export default function PowerCampaign() {
                 </p>
 
                 <div className="donation-chips">
-                    {amounts.map((amount) => (
+                    {amounts.map(({ label, option }) => (
                         <button
-                            key={amount}
-                            className={`chip-btn ${selectedAmount === amount ? 'selected' : ''}`}
-                            onClick={() => setSelectedAmount(amount)}
+                            key={option}
+                            type="button"
+                            className={`chip-btn ${selectedAmountOption === option ? 'selected' : ''}`}
+                            aria-pressed={selectedAmountOption === option}
+                            onClick={() => chooseDonationAmount(option)}
                         >
-                            {amount}
+                            {label}
                         </button>
                     ))}
                 </div>
 
-                <button className="mpesa-btn">
+                <button type="button" className="mpesa-btn" onClick={() => setDonationOpen(true)}>
                     <SendToMobileOutlined className="mpesa-icon" /> Contribute via M-Pesa
                 </button>
             </div>

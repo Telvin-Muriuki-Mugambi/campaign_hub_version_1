@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import '../styling/TouchpointShowcase.css';
 import {
   Close,
@@ -7,14 +8,31 @@ import {
   TrendingUpOutlined,
   ArrowForward
 } from '@mui/icons-material';
+import useDonation from '../context/useDonation.js';
 
-export default function TouchpointShowcase() {
+export default function TouchpointShowcase({ onClose }) {
+  const { donationAmount, setDonationAmount } = useDonation();
+
+  useEffect(() => {
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') onClose();
+    };
+
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [onClose]);
+
+  const closeOnBackdrop = (event) => {
+    if (event.target === event.currentTarget) onClose();
+  };
+
   return (
-    <section className="touchpoint-section">
+    <div className="touchpoint-overlay" onMouseDown={closeOnBackdrop}>
+      <section className="touchpoint-section touchpoint-dialog" role="dialog" aria-modal="true" aria-labelledby="touchpoint-title">
       {/* Header */}
       <div className="touchpoint-header">
         <p className="touchpoint-eyebrow">INTERACTION DETAILS</p>
-        <h2 className="touchpoint-title">Designed for every touchpoint</h2>
+        <h2 className="touchpoint-title" id="touchpoint-title">Power the Campaign</h2>
       </div>
 
       {/* Comparison Grid */}
@@ -28,7 +46,7 @@ export default function TouchpointShowcase() {
 
             <div className="sheet-header">
               <h3 className="sheet-title">Power the Campaign</h3>
-              <button type="button" className="close-btn" aria-label="Close sheet">
+              <button type="button" className="close-btn" aria-label="Close donation dialog" onClick={onClose}>
                 <Close fontSize="small" />
               </button>
             </div>
@@ -38,7 +56,17 @@ export default function TouchpointShowcase() {
             </p>
 
             <div className="selected-amount-pill">
-              <span className="amount-text">KES 500</span>
+              <span className="amount-prefix">KES</span>
+              <input
+                type="number"
+                min="0"
+                step="1"
+                inputMode="numeric"
+                aria-label="Donation amount in Kenyan shillings"
+                className="amount-input"
+                value={donationAmount}
+                onChange={(event) => setDonationAmount(Number(event.target.value) || 0)}
+              />
               <CheckCircleOutlineOutlined className="check-icon" fontSize="small" />
             </div>
 
@@ -81,6 +109,7 @@ export default function TouchpointShowcase() {
           
         </div>
       </div>
-    </section>
+      </section>
+    </div>
   );
 }

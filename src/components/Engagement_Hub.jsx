@@ -8,16 +8,20 @@ import {
 } from "@mui/icons-material";
 import "../styling/Engagement_Hub.css"
 
-export default function Engagement_Hub(){
+export default function Engagement_Hub({ view = 'all' }) {
+    const showAgenda = view === 'all' || view === 'agenda';
+    const showRegistry = view === 'all' || view === 'registry';
+
     return (
-        <section className="hub-section">
+        <section className={`hub-section${view === 'all' ? '' : ' hub-section-focused'}`}>
             <div className="hub-header">
                 <p className="hub-eyebrow">LISTEN. CONNECT. ACT.</p>
-                <h1 className="hub-title">Be Part of the Solution Today</h1>
+                <h1 className="hub-title">{view === 'agenda' ? 'Shape the Karura Agenda' : view === 'registry' ? 'The Karura Youth Registry' : 'Be Part of the Solution Today'}</h1>
             </div>
 
             <div className="hub-grid">
                 {/* Left Card: Shape the Agenda */}
+                {showAgenda && (
                 <div className="hub-card">
                     <div className="hub-icon-wrapper">
                         <ChatBubbleOutlineOutlined className="hub-icon" />
@@ -51,8 +55,10 @@ export default function Engagement_Hub(){
                         </button>
                     </form>
                 </div>
+                )}
 
                 {/* Right Card: Youth Registry */}
+                {showRegistry && (
                 <div className="hub-card">
                     <div className="hub-icon-wrapper">
                         <PeopleOutlineOutlined className="hub-icon" />
@@ -86,6 +92,7 @@ export default function Engagement_Hub(){
                         </button>
                     </form>
                 </div>
+                )}
             </div>
         </section>
     );

@@ -35,6 +35,11 @@
   gap: 2rem;
 }
 
+.hub-section-focused .hub-grid {
+  grid-template-columns: minmax(0, 720px);
+  justify-content: center;
+}
+
 /* --- Cards --- */
 .hub-card {
   background-color: #ffffff;

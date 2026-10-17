@@ -2,27 +2,33 @@ import { useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import IconButton from '@mui/material/IconButton';
-import "../styling/Navigation.css"
+import { Link, NavLink } from 'react-router-dom';
+import "../styling/Header.css"
 
-export default function Header() {
+export default function Header({ onDonate }) {
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const handleDonate = () => {
+        setMenuOpen(false);
+        onDonate();
+    };
 
     return (
         <header className="campaign-container">
             <nav className="navbar">
 
                 <div className="nav-logo">
-                    <h2>Sandra Mbuvi 2027</h2>
+                    <Link to="/" aria-label="Sandra Mbuvi 2027 home"><h2>Sandra Mbuvi 2027</h2></Link>
                 </div>
 
                 <div id="primary-navigation" className={`nav-links${menuOpen ? ' is-open' : ''}`}>
-                    <a href="#agendas" onClick={() => setMenuOpen(false)}>Agendas</a>
-                    <a href="#youth-registry" onClick={() => setMenuOpen(false)}>Youth Registry</a>
-                    <a href="#volunteer" onClick={() => setMenuOpen(false)}>Volunteer</a>
+                    <NavLink to="/agendas" onClick={() => setMenuOpen(false)}>Agendas</NavLink>
+                    <NavLink to="/youth-registry" onClick={() => setMenuOpen(false)}>Youth Registry</NavLink>
+                    <NavLink to="/volunteer" onClick={() => setMenuOpen(false)}>Volunteer</NavLink>
                 </div>
 
                 <div className="nav-actions">
-                    <a href="#donate" className="btn-donate-nav">Donate</a>
+                    <button type="button" className="btn-donate-nav" onClick={handleDonate}>Donate</button>
                     <IconButton
                         className="nav-menu-toggle"
                         aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
