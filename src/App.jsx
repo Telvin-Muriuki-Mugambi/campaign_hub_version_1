@@ -1,8 +1,8 @@
-import './App.css'
+import Navigation from './components/Navigation';
+import "./App.css";
 
 function App() {
-  return (
-    <>
-    </>
-  )
+  return <Navigation />;
 }
+
+export default App

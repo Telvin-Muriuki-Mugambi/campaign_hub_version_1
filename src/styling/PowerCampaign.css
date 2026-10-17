@@ -1,0 +1,122 @@
+/* --- Section Container --- */
+.power-section {
+  background-color: #11233a; /* Dark navy background */
+  padding: 5rem 6%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.power-content {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Typography --- */
+.power-eyebrow {
+  color: #fbbf24; /* Yellow/Gold */
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.power-title {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.power-description {
+  color: #94a3b8; /* Light slate gray */
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+/* --- Donation Chips --- */
+.donation-chips {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.chip-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #334155;
+  border-radius: 0.5rem;
+  padding: 0.875rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip-btn:hover {
+  border-color: #fbbf24;
+}
+
+.chip-btn.selected {
+  background-color: #fbbf24; /* Highlighted yellow */
+  color: #0f172a; /* Dark text */
+  border-color: #fbbf24;
+}
+
+/* --- M-Pesa Button --- */
+.mpesa-btn {
+  background-color: #22c55e; /* M-Pesa Green */
+  color: #0f172a;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.mpesa-btn:hover {
+  background-color: #16a34a;
+  transform: translateY(-2px);
+}
+
+.mpesa-icon {
+  font-size: 1.5rem !important;
+}
+
+/* --- Responsive Breakpoints --- */
+@media (max-width: 640px) {
+  .power-title {
+    font-size: 2.25rem;
+  }
+  
+  .power-description br {
+    display: none; /* Allows text to wrap naturally on mobile */
+  }
+
+  .donation-chips {
+    gap: 0.75rem;
+  }
+
+  .chip-btn {
+    padding: 0.75rem 1.25rem;
+    flex: 1 1 calc(50% - 0.75rem); /* Two chips per row on mobile */
+  }
+
+  .mpesa-btn {
+    width: 100%;
+  }
+}
