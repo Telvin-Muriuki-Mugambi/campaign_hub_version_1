@@ -1,5 +1,6 @@
 import Navigation from './components/Navigation';
-import "./App.css"
+import "./App.css";
+
 function App() {
   return <Navigation />;
 }

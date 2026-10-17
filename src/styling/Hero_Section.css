@@ -59,6 +59,14 @@
   justify-content: flex-start;
 }
 
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
 .btn-primary {
   background-color: var(--accent-gold);
   color: var(--primary-navy);

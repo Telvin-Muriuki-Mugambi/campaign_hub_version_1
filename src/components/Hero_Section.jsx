@@ -1,4 +1,6 @@
 import "../styling/Hero_Section.css"
+import { Link } from 'react-router-dom';
+
 export default function Hero_Section(){
     return ( 
         <header className="hero-section">
@@ -15,8 +17,8 @@ export default function Hero_Section(){
                         </p>
 
                         <div className="hero-buttons">
-                            <button className="btn-primary">Join the Movement</button>
-                            <button className="btn-secondary">Read the Blueprint</button>
+                            <Link to="/volunteer" className="btn-primary">Join the Movement</Link>
+                            <Link to="/agendas#agenda-section" className="btn-secondary">Read the Blueprint</Link>
                         </div>
 
                     </div>

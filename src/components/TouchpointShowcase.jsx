@@ -37,9 +37,9 @@ export default function TouchpointShowcase({ onClose }) {
 
       {/* Comparison Grid */}
       <div className="touchpoint-grid">
-        {/* Left Column: Mobile / Contribution Sheet */}
+        {/* Left Column:Contribution Sheet */}
         <div className="preview-column">
-          <span className="column-label">MOBILE / CONTRIBUTION SHEET</span>
+          <span className="column-label">CONTRIBUTION SHEET</span>
 
           <div className="sheet-card">
             <div className="drag-handle" />

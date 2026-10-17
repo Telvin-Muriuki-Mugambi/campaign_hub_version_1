@@ -1,5 +1,6 @@
 /* --- Section & Header --- */
 .hub-section {
+  scroll-margin-top: 90px;
   padding: 5rem 6%;
   background-color: #f4f6f8; /* Soft grey background from the design */
   display: flex;

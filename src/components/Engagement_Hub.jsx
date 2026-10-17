@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { 
     ChatBubbleOutlineOutlined, 
     PeopleOutlineOutlined, 
@@ -12,8 +13,14 @@ export default function Engagement_Hub({ view = 'all' }) {
     const showAgenda = view === 'all' || view === 'agenda';
     const showRegistry = view === 'all' || view === 'registry';
 
+    useEffect(() => {
+        if (view === 'agenda' && window.location.hash === '#agenda-section') {
+            document.getElementById('agenda-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, [view]);
+
     return (
-        <section className={`hub-section${view === 'all' ? '' : ' hub-section-focused'}`}>
+        <section id={view === 'agenda' ? 'agenda-section' : undefined} className={`hub-section${view === 'all' ? '' : ' hub-section-focused'}`}>
             <div className="hub-header">
                 <p className="hub-eyebrow">LISTEN. CONNECT. ACT.</p>
                 <h1 className="hub-title">{view === 'agenda' ? 'Shape the Karura Agenda' : view === 'registry' ? 'The Karura Youth Registry' : 'Be Part of the Solution Today'}</h1>
